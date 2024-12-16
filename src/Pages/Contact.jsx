@@ -27,7 +27,7 @@ const Contact = () => {
   };
 
   return (
-    <Container maxWidth="sm" sx={{ mt: 10 }}>
+    <Container maxWidth="sm" sx={{ mt: 9 }}>
       <Box sx={{ textAlign: 'center', mb: 4 }}>
         <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
           Let’s Talk
@@ -84,7 +84,7 @@ const Contact = () => {
             />
           </Box>
 
-          <Box sx={{ textAlign: 'center' }}>
+          <Box sx={{ textAlign: 'center', mb:"5" }}>
             <Button type="submit" variant="contained" color="primary">
               Submit
             </Button>

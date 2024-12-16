@@ -87,6 +87,7 @@ const ProjectPage = () => {
         fontWeight="bold"
         textAlign="center"
         mb={4}
+        mt={2}
         color="#333"
       >
         My Projects

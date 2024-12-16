@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, Button, Avatar, keyframes } from '@mui/material';
-import WbSunnyIcon from '@mui/icons-material/WbSunny'; // Morning Icon
-import LightModeIcon from '@mui/icons-material/LightMode'; // Noon Icon
-import NightsStayIcon from '@mui/icons-material/NightsStay'; // Night Icon
-import BedtimeIcon from '@mui/icons-material/Bedtime'; // Late Night Icon
-import DownloadIcon from '@mui/icons-material/Download'; // Download Icon
-import WorkIcon from '@mui/icons-material/Work'; // Projects Icon
-import ContactMailIcon from '@mui/icons-material/ContactMail'; // Contact Icon
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import NightsStayIcon from '@mui/icons-material/NightsStay';
+import BedtimeIcon from '@mui/icons-material/Bedtime';
+import DownloadIcon from '@mui/icons-material/Download';
+import WorkIcon from '@mui/icons-material/Work';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
 
-// Define keyframe animations
 const fadeIn = keyframes`
   0% { opacity: 0; }
   100% { opacity: 1; }
@@ -27,9 +26,8 @@ const scaleIn = keyframes`
 const Home = () => {
   const [greeting, setGreeting] = useState('Hello');
   const [icon, setIcon] = useState(null);
-  const [currentText, setCurrentText] = useState('I\'m Abraham Taiwo');
+  const [currentText, setCurrentText] = useState("I'm Abraham Taiwo");
 
-  // List of rotating texts
   const textList = [
     "I'm Abraham Taiwo ,",
     'A Full Stack Developer,',
@@ -37,19 +35,16 @@ const Home = () => {
     'And Graphic Designer...',
   ];
 
-  // Function to rotate texts dynamically
   useEffect(() => {
-    let textIndex = 0; // Start from the first text
+    let textIndex = 0;
     const rotateText = () => {
-      textIndex = (textIndex + 1) % textList.length; // Loop through the text list
-      setCurrentText(textList[textIndex]); // Update the current text
+      textIndex = (textIndex + 1) % textList.length;
+      setCurrentText(textList[textIndex]);
     };
-
-    const interval = setInterval(rotateText, 5000); // Change text every 5 seconds
-    return () => clearInterval(interval); // Cleanup on unmount
+    const interval = setInterval(rotateText, 5000);
+    return () => clearInterval(interval);
   }, []);
 
-  // Function to update the greeting and icon based on current time in Nigeria
   const updateGreeting = () => {
     const now = new Date();
     const nigeriaTime = new Date(now.toLocaleString('en-US', { timeZone: 'Africa/Lagos' }));
@@ -70,11 +65,10 @@ const Home = () => {
     }
   };
 
-  // Run the function on component mount
   useEffect(() => {
     updateGreeting();
-    const timer = setInterval(updateGreeting, 60000); // Update greeting every minute
-    return () => clearInterval(timer); // Clean up the interval on unmount
+    const timer = setInterval(updateGreeting, 60000);
+    return () => clearInterval(timer);
   }, []);
 
   return (
@@ -83,19 +77,21 @@ const Home = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        flexDirection: { xs: 'column', sm: 'row' }, // Responsive layout
         height: '100vh',
         gap: 4,
         backgroundColor: '#f3f3f3',
         animation: `${fadeIn} 1.5s ease-in-out`,
+        padding: 2,
       }}
     >
-      {/* Circular Profile Image */}
+      {/* Avatar */}
       <Avatar
-        src="https://via.placeholder.com/300" // Replace with your image URL
+        src="https://scontent.flos1-3.fna.fbcdn.net/v/t39.30808-6/411157452_919585066320321_8551562019867247546_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeFgtSID6taKdZMrZiFVSlYmRs3wGgwUpb5GzfAaDBSlvmWq_exaBjY2tM5ywVQU6LWIJI5e9figABWwtM31OuLv&_nc_ohc=M76G4_WSXn4Q7kNvgE7RaZ0&_nc_zt=23&_nc_ht=scontent.flos1-3.fna&_nc_gid=AEAJBB2XG5H0nDGaB7jr5Pu&oh=00_AYB99hUYzGIP6j9qMLoUpAgsWk4uFP65TU0s1nzI4Vzidw&oe=67668B81"
         alt="Profile Picture"
         sx={{
-          width: 300,
-          height: 300,
+          width: { xs: 150, sm: 300 },
+          height: { xs: 150, sm: 300 },
           boxShadow: 3,
           animation: `${scaleIn} 1.2s ease-in-out`,
         }}
@@ -111,24 +107,27 @@ const Home = () => {
           animation: `${slideUp} 1s ease-out`,
         }}
       >
-        {/* Greeting Icon and Text */}
         <Box display="flex" justifyContent="center" alignItems="center" gap={2}>
           {icon}
-          <Typography variant="h2" fontWeight="bold" color="textPrimary">
+          <Typography
+            variant="h4"
+            fontWeight="bold"
+            color="textPrimary"
+            sx={{
+              fontSize: { xs: '1.5rem', sm: '2.5rem' }, // Responsive text size
+            }}
+          >
             {greeting}
           </Typography>
         </Box>
 
-        {/* Dynamic Rotating Text */}
         <Typography
           variant="h6"
           color="textSecondary"
           sx={{
-            maxWidth: 500,
-            margin: '0 auto',
-            fontSize: '1.5rem',
+            fontSize: { xs: '1rem', sm: '1.5rem' },
             fontWeight: 'bold',
-            animation: `${fadeIn} 1s ease-in-out`,
+            marginTop: 2,
           }}
         >
           {currentText}
@@ -137,25 +136,32 @@ const Home = () => {
         <Typography
           variant="body1"
           color="textSecondary"
-          sx={{ maxWidth: 500, margin: '0 auto', fontSize: '1rem' }}
+          sx={{
+            fontSize: { xs: '0.8rem', sm: '1rem' },
+            marginTop: 1,
+          }}
         >
           Programming is my passion, where logic meets creativity and ideas become reality
         </Typography>
 
         {/* Buttons */}
-        <Box display="flex" gap={4} justifyContent="center" alignItems="center" marginTop={3}>
+        <Box
+          display="flex"
+          flexDirection={{ xs: 'column', sm: 'row' }} // Responsive button layout
+          gap={2}
+          justifyContent="center"
+          alignItems="center"
+          marginTop={3}
+        >
           <Button
             variant="contained"
             sx={{
               backgroundColor: '#eea302',
               color: '#000',
-              width: 200,
+              width: { xs: '100%', sm: 200 },
               height: 50,
-              borderRadius: '5%',
-              fontWeight: 'bold',
               animation: `${scaleIn} 1.5s ease-in-out 0.2s`,
-              '&:hover': { backgroundColor: '#d68f00', transform: 'scale(1.1)' },
-              transition: 'transform 0.3s ease',
+              '&:hover': { backgroundColor: '#d68f00' },
             }}
           >
             <DownloadIcon sx={{ marginRight: 1 }} />
@@ -167,13 +173,10 @@ const Home = () => {
             sx={{
               backgroundColor: '#ff3b25',
               color: '#000',
-              width: 200,
+              width: { xs: '100%', sm: 200 },
               height: 50,
-              borderRadius: '5%',
-              fontWeight: 'bold',
               animation: `${scaleIn} 1.5s ease-in-out 0.4s`,
-              '&:hover': { backgroundColor: '#e1301f', transform: 'scale(1.1)' },
-              transition: 'transform 0.3s ease',
+              '&:hover': { backgroundColor: '#e1301f' },
             }}
           >
             <WorkIcon sx={{ marginRight: 1 }} />
@@ -185,13 +188,10 @@ const Home = () => {
             sx={{
               backgroundColor: '#80d8da',
               color: '#000',
-              width: 200,
+              width: { xs: '100%', sm: 200 },
               height: 50,
-              borderRadius: '5%',
-              fontWeight: 'bold',
               animation: `${scaleIn} 1.5s ease-in-out 0.6s`,
-              '&:hover': { backgroundColor: '#6cbfc0', transform: 'scale(1.1)' },
-              transition: 'transform 0.3s ease',
+              '&:hover': { backgroundColor: '#6cbfc0' },
             }}
           >
             <ContactMailIcon sx={{ marginRight: 1 }} />
