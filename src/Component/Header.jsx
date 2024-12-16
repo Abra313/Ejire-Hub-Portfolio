@@ -1,6 +1,6 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button, IconButton } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Navbar = () => {
   return (
@@ -13,25 +13,30 @@ const Navbar = () => {
       }}
     >
       <Toolbar>
-        
         <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 'bold' }}>
-        Ejire Hub
+          Ejire Hub
         </Typography>
-        <Button color="inherit" sx={{ fontWeight: 'bold' }}>
-          Home
-        </Button>
-        <Button color="inherit" sx={{ fontWeight: 'bold' }}>
-          Skills
-        </Button>
-        <Button color="inherit" sx={{ fontWeight: 'bold' }}>
-          Projects
-        </Button>
-        <Button color="inherit" sx={{ fontWeight: 'bold' }}>
-          Services
-        </Button>
-        <Button color="inherit" sx={{ fontWeight: 'bold' }}>
-          Contact
-        </Button>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <Button color="inherit" >
+            Home
+          </Button>
+        </Link>
+        <Link to="/skill" >
+          <Button color="inherit" >
+            Skills
+          </Button>
+        </Link>
+        <Link to="/project" >
+          <Button color="inherit" >
+            Project
+          </Button>
+        </Link>
+       
+        <Link to="/contact" >
+          <Button color="inherit" >
+            Contact
+          </Button>
+        </Link>
       </Toolbar>
     </AppBar>
   );
