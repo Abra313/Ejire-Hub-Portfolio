@@ -154,7 +154,8 @@ const Home = () => {
           alignItems="center"
           marginTop={3}
         >
-        <a href={process.env.VITE_CV_DOWNLOAD_URL} download>            <Button
+          <a href="https://example.com/your-cv.pdf" download>
+            <Button
               variant="contained"
               sx={{
                 backgroundColor: '#eea302',
