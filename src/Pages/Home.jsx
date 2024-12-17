@@ -154,7 +154,7 @@ const Home = () => {
           alignItems="center"
           marginTop={3}
         >
-          <a href={process.env.REACT_APP_CV_DOWNLOAD_URL} download>
+          <a href={import.meta.env.VITE_CV_DOWNLOAD_URL} download>
             <Button
               variant="contained"
               sx={{
