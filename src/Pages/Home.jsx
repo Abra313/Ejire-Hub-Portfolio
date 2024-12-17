@@ -7,6 +7,7 @@ import BedtimeIcon from '@mui/icons-material/Bedtime';
 import DownloadIcon from '@mui/icons-material/Download';
 import WorkIcon from '@mui/icons-material/Work';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
+import { Link } from 'react-router-dom';
 
 const fadeIn = keyframes`
   0% { opacity: 0; }
@@ -153,50 +154,56 @@ const Home = () => {
           alignItems="center"
           marginTop={3}
         >
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: '#eea302',
-              color: '#000',
-              width: { xs: '100%', sm: 200 },
-              height: 50,
-              animation: `${scaleIn} 1.5s ease-in-out 0.2s`,
-              '&:hover': { backgroundColor: '#d68f00' },
-            }}
-          >
-            <DownloadIcon sx={{ marginRight: 1 }} />
-            Download CV
-          </Button>
+          <a href={process.env.REACT_APP_CV_DOWNLOAD_URL} download>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: '#eea302',
+                color: '#000',
+                width: { xs: '100%', sm: 200 },
+                height: 50,
+                animation: `${scaleIn} 1.5s ease-in-out 0.2s`,
+                '&:hover': { backgroundColor: '#d68f00' },
+              }}
+            >
+              <DownloadIcon sx={{ marginRight: 1 }} />
+              Download CV
+            </Button>
+          </a>
 
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: '#ff3b25',
-              color: '#000',
-              width: { xs: '100%', sm: 200 },
-              height: 50,
-              animation: `${scaleIn} 1.5s ease-in-out 0.4s`,
-              '&:hover': { backgroundColor: '#e1301f' },
-            }}
-          >
-            <WorkIcon sx={{ marginRight: 1 }} />
-            Projects
-          </Button>
+          <Link to="/project" style={{ textDecoration: 'none' }}>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: '#ff3b25',
+                color: '#000',
+                width: { xs: '100%', sm: 200 },
+                height: 50,
+                animation: `${scaleIn} 1.5s ease-in-out 0.4s`,
+                '&:hover': { backgroundColor: '#e1301f' },
+              }}
+            >
+              <WorkIcon sx={{ marginRight: 1 }} />
+              Projects
+            </Button>
+          </Link>
 
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: '#80d8da',
-              color: '#000',
-              width: { xs: '100%', sm: 200 },
-              height: 50,
-              animation: `${scaleIn} 1.5s ease-in-out 0.6s`,
-              '&:hover': { backgroundColor: '#6cbfc0' },
-            }}
-          >
-            <ContactMailIcon sx={{ marginRight: 1 }} />
-            Contact
-          </Button>
+          <Link to="/contact" style={{ textDecoration: 'none' }}>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: '#80d8da',
+                color: '#000',
+                width: { xs: '100%', sm: 200 },
+                height: 50,
+                animation: `${scaleIn} 1.5s ease-in-out 0.6s`,
+                '&:hover': { backgroundColor: '#6cbfc0' },
+              }}
+            >
+              <ContactMailIcon sx={{ marginRight: 1 }} />
+              Contact
+            </Button>
+          </Link>
         </Box>
       </Box>
     </Box>
