@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText, Box } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
+import InstallPrompt from './InstallPrompt'; // Import the InstallPrompt component
 
 const Navbar = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -45,12 +46,14 @@ const Navbar = () => {
         </Box>
 
         {/* Desktop Links */}
-        <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+        <Box sx={{ display: { xs: 'none', sm: 'block' }, alignItems: 'center' }}>
           {navLinks.map((link) => (
             <Link key={link.name} to={link.path} style={{ textDecoration: 'none' }}>
               <Button color="inherit">{link.name}</Button>
             </Link>
           ))}
+          {/* Install Button for Desktop */}
+          <InstallPrompt />
         </Box>
       </Toolbar>
 
@@ -74,6 +77,12 @@ const Navbar = () => {
               </Link>
             </ListItem>
           ))}
+          {/* Install Button for Mobile */}
+          <ListItem>
+            <Box sx={{ width: '100%', textAlign: 'center' }}>
+              <InstallPrompt />
+            </Box>
+          </ListItem>
         </List>
       </Drawer>
     </AppBar>

@@ -10,3 +10,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </ThemeProvider>
 );
+
+// Register Service Worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/src/pwa/service-worker.js') // Adjust the path if necessary
+      .then(() => console.log('Service Worker Registered'))
+      .catch((err) => console.error('Service Worker Registration Failed:', err));
+  });
+}

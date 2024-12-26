@@ -68,7 +68,7 @@ const Footer = () => {
           <Box>
             {/* LinkedIn */}
             <Link
-              href="#"
+              href="https://www.linkedin.com/in/abraham-taiwo-peter-4731302b0/"
               color="inherit"
               sx={{
                 mr: 1,
