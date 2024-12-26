@@ -4,7 +4,7 @@ import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import NightsStayIcon from '@mui/icons-material/NightsStay';
 import BedtimeIcon from '@mui/icons-material/Bedtime';
-import DownloadIcon from '@mui/icons-material/Download';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 import WorkIcon from '@mui/icons-material/Work';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import { Link } from 'react-router-dom';
@@ -88,7 +88,7 @@ const Home = () => {
     >
       {/* Avatar */}
       <Avatar
-        src="https://scontent.flos1-3.fna.fbcdn.net/v/t39.30808-6/411157452_919585066320321_8551562019867247546_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeFgtSID6taKdZMrZiFVSlYmRs3wGgwUpb5GzfAaDBSlvmWq_exaBjY2tM5ywVQU6LWIJI5e9figABWwtM31OuLv&_nc_ohc=M76G4_WSXn4Q7kNvgE7RaZ0&_nc_zt=23&_nc_ht=scontent.flos1-3.fna&_nc_gid=AEAJBB2XG5H0nDGaB7jr5Pu&oh=00_AYB99hUYzGIP6j9qMLoUpAgsWk4uFP65TU0s1nzI4Vzidw&oe=67668B81"
+        src="https://scontent.flos1-2.fna.fbcdn.net/v/t39.30808-6/335312495_1589219844906990_4288669999037673587_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeEufgFmYXXruxL5bl6UOiQgcaJ4OO-b-A1xong475v4DSywK4NEzSaaNqD3uov3BMrBpy6rWrvzcBtQ01XMxI2D&_nc_ohc=WC-n1WTgy1oQ7kNvgHYHukc&_nc_zt=23&_nc_ht=scontent.flos1-2.fna&_nc_gid=AJ33PhkQbWdxKdaBB7dqNLm&oh=00_AYB_3TdOffG1tipzp61LTElI_2Pv6BaJ_W0lNsZjyzL2_g&oe=67734566"
         alt="Profile Picture"
         sx={{
           width: { xs: 150, sm: 300 },
@@ -154,7 +154,10 @@ const Home = () => {
           alignItems="center"
           marginTop={3}
         >
-          <a href="https://example.com/your-cv.pdf" download>
+          <a
+            href="https://scontent.flos5-3.fna.fbcdn.net/v/t39.30808-6/471250702_1203801834565308_5597973211036684089_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHHs9zCreHYqq4AqoG03FTC9eM4qOZW32f14zio5lbfZ3TsEyfZCzfIVF0uvDNr32wiJhVQlMQrPx0BB8Y28gLj&_nc_ohc=kYVTntFUSx0Q7kNvgH8ZmgH&_nc_zt=23&_nc_ht=scontent.flos5-3.fna&_nc_gid=AWvD_3_NNQ3vWwaCD_p6eoh&oh=00_AYDSSDJVvHNzlSoDm5ACUbSTNVWDF1apb7BYBLlFh1pxCA&oe=67736C47"
+            download
+          >
             <Button
               variant="contained"
               sx={{
@@ -166,8 +169,8 @@ const Home = () => {
                 '&:hover': { backgroundColor: '#d68f00' },
               }}
             >
-              <DownloadIcon sx={{ marginRight: 1 }} />
-              Download CV
+              <VisibilityIcon sx={{ marginRight: 1 }} />
+              View CV
             </Button>
           </a>
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText, Box } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
-import InstallPrompt from './InstallPrompt'; // Import the InstallPrompt component
+// import InstallPrompt from './InstallPrompt'; // Import the InstallPrompt component
 
 const Navbar = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -53,7 +53,7 @@ const Navbar = () => {
             </Link>
           ))}
           {/* Install Button for Desktop */}
-          <InstallPrompt />
+          {/* <InstallPrompt /> */}
         </Box>
       </Toolbar>
 
@@ -80,7 +80,7 @@ const Navbar = () => {
           {/* Install Button for Mobile */}
           <ListItem>
             <Box sx={{ width: '100%', textAlign: 'center' }}>
-              <InstallPrompt />
+              {/* <InstallPrompt /> */}
             </Box>
           </ListItem>
         </List>
